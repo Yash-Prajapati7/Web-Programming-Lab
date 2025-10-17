@@ -42,7 +42,7 @@
 
 1. **Push Code to GitHub** (if not already done)
    ```powershell
-   cd c:\Users\pyash\Music\Projects\WP\Exp9
+   cd c:\<path>\WP\Exp9
    git init
    git add .
    git commit -m "Initial commit - MERN Student Portal"
@@ -265,18 +265,6 @@ Solution: Vercel handles this automatically for SPAs
 2. **Vercel Analytics**: Track frontend usage
 3. **MongoDB Atlas Metrics**: Database performance
 
-## Custom Domain (Optional)
-
-### For Frontend (Vercel):
-1. Go to Project Settings → Domains
-2. Add your domain
-3. Update DNS records as shown
-
-### For Backend (Render):
-1. Upgrade to paid plan ($7/month)
-2. Go to Settings → Custom Domains
-3. Add your domain
-4. Update DNS records
 
 ## Conclusion
 
@@ -287,3 +275,4 @@ Your MERN stack application is now live and accessible worldwide! 🎉
 - Backend: https://student-portal-api.onrender.com
 
 Share these URLs in your project documentation!
+
