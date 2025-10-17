@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Static Server Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Node.js HTTP Server</h1>
+            <p>Simple static file server demonstration</p>
+        </header>
+
+        <main class="content">
+            <section class="card">
+                <h2>Welcome!</h2>
+                <p>This page is being served by a custom Node.js HTTP server built from scratch using only the <code>http</code> and <code>fs</code> modules.</p>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Static Files</h3>
+                    <p>Serves HTML, CSS, JavaScript, and image files</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h3>MIME Types</h3>
+                    <p>Automatically detects and sets correct content types</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Caching</h3>
+                    <p>Implements basic caching headers for performance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Security</h3>
+                    <p>Prevents directory traversal attacks</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Server Features</h2>
+                <ul>
+                    <li>✅ Serves static files from <code>public/</code> directory</li>
+                    <li>✅ Custom 404 error pages</li>
+                    <li>✅ Custom 500 error handling</li>
+                    <li>✅ Request logging with timestamps</li>
+                    <li>✅ MIME type detection</li>
+                    <li>✅ Cache-Control headers</li>
+                    <li>✅ Directory index support (index.html)</li>
+                    <li>✅ Graceful shutdown on SIGINT</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Test Pages</h2>
+                <div class="test-links">
+                    <a href="/" class="btn">Home (index.html)</a>
+                    <a href="/about.html" class="btn">About Page</a>
+                    <a href="/script.js" class="btn">JavaScript File</a>
+                    <a href="/styles.css" class="btn">CSS File</a>
+                    <a href="/nonexistent.html" class="btn btn-danger">404 Test</a>
+                </div>
+            </section>
+
+            <section class="card code-section">
+                <h2>Server Code Highlights</h2>
+                <pre><code>const server = http.createServer((req, res) => {
+    // Parse URL and serve appropriate file
+    let filePath = req.url === '/' ? '/index.html' : req.url;
+    const fullPath = path.join(PUBLIC_DIR, filePath);
+    
+    fs.readFile(fullPath, (err, data) => {
+        if (err) {
+            // Handle 404 or 500 errors
+            return handleError(res, err);
+        }
+        
+        // Set appropriate headers and send response
+        res.writeHead(200, {
+            'Content-Type': getMimeType(filePath),
+            'Cache-Control': 'public, max-age=3600'
+        });
+        res.end(data);
+    });
+});</code></pre>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Node.js HTTP Server Demo | Experiment 6</p>
+        </footer>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

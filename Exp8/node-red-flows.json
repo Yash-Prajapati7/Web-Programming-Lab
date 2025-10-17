@@ -1,0 +1,85 @@
+[
+    {
+        "id": "node-red-flow-1",
+        "type": "tab",
+        "label": "Student Attendance System",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "rfid-reader",
+        "type": "inject",
+        "z": "node-red-flow-1",
+        "name": "Simulate RFID Scan",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"rfidTag\":\"RFID123456\",\"deviceId\":\"DEVICE001\",\"location\":\"Main Gate\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            ["process-rfid"]
+        ]
+    },
+    {
+        "id": "process-rfid",
+        "type": "function",
+        "z": "node-red-flow-1",
+        "name": "Process RFID Data",
+        "func": "// Extract RFID tag from payload\nconst rfidTag = msg.payload.rfidTag;\nconst deviceId = msg.payload.deviceId;\nconst location = msg.payload.location;\n\n// Simulate finding roll number from RFID (in real system, this would be a lookup)\nconst rollNumberMap = {\n    \"RFID123456\": \"CS2021001\",\n    \"RFID789012\": \"CS2021002\"\n};\n\nconst rollNumber = rollNumberMap[rfidTag] || \"UNKNOWN\";\n\n// Prepare data for API\nmsg.payload = {\n    rollNumber: rollNumber,\n    deviceId: deviceId,\n    rfidTag: rfidTag,\n    location: location\n};\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            ["send-to-api"]
+        ]
+    },
+    {
+        "id": "send-to-api",
+        "type": "http request",
+        "z": "node-red-flow-1",
+        "name": "Send to Student API",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost:5000/api/hardware/capture",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 620,
+        "y": 100,
+        "wires": [
+            ["display-result"]
+        ]
+    },
+    {
+        "id": "display-result",
+        "type": "debug",
+        "z": "node-red-flow-1",
+        "name": "Display Result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 100,
+        "wires": []
+    }
+]

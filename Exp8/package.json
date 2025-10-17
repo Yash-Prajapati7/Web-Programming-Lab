@@ -1,0 +1,23 @@
+{
+  "name": "exp8-student-database-api",
+  "version": "1.0.0",
+  "description": "RESTful API for Student Database with MongoDB and Node-RED integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["mongodb", "rest-api", "node-red", "iot", "student-database"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.6.0",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

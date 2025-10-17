@@ -1,0 +1,12 @@
+{
+  "name": "exp6-node-http-server",
+  "version": "1.0.0",
+  "description": "Simple Node.js HTTP server for serving static files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["nodejs", "http", "static-server"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Premium Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechStore</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#products" class="dropdown-toggle">Products ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#laptops">Laptops</a></li>
+                            <li><a href="#smartphones">Smartphones</a></li>
+                            <li><a href="#accessories">Accessories</a></li>
+                            <li><a href="#audio">Audio</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to TechStore</h2>
+            <p>Discover the Latest in Premium Electronics</p>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <main>
+        <section class="featured-products" id="products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop" alt="Premium Laptop">
+                            <figcaption>
+                                <h3>Ultra Laptop Pro</h3>
+                                <p class="price">$1,299.99</p>
+                                <p class="description">High-performance laptop with 16GB RAM and 512GB SSD</p>
+                                <button class="buy-button">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop" alt="Smartphone">
+                            <figcaption>
+                                <h3>SmartPhone X12</h3>
+                                <p class="price">$899.99</p>
+                                <p class="description">Latest flagship with 5G and advanced camera system</p>
+                                <button class="buy-button">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Wireless Headphones">
+                            <figcaption>
+                                <h3>Premium Headphones</h3>
+                                <p class="price">$349.99</p>
+                                <p class="description">Noise-cancelling wireless headphones with 30hr battery</p>
+                                <button class="buy-button">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop" alt="Tablet">
+                            <figcaption>
+                                <h3>Tab Pro 2024</h3>
+                                <p class="price">$599.99</p>
+                                <p class="description">12.9" display with stylus support and all-day battery</p>
+                                <button class="buy-button">Add to Cart</button>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Audio Section -->
+        <section class="promo-section">
+            <div class="container">
+                <h2>Listen to Our Latest Deals!</h2>
+                <audio controls>
+                    <source src="promo.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="promo-text">Experience exclusive discounts on premium electronics</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <article>
+                    <h2>About TechStore</h2>
+                    <p>We are your trusted destination for premium electronics. With over 10 years of experience, we bring you the latest technology from top brands worldwide.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>🚚 Free Shipping</h3>
+                            <p>On orders over $100</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🔒 Secure Payment</h3>
+                            <p>100% secure transactions</p>
+                        </div>
+                        <div class="feature">
+                            <h3>↩️ Easy Returns</h3>
+                            <p>30-day return policy</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>support@techstore.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Address</h3>
+                        <p>123 Tech Street, Silicon Valley, CA 94025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Aside for Newsletter -->
+    <aside class="newsletter">
+        <div class="container">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechStore. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
